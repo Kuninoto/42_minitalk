@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 00:20:05 by nnuno-ca         ###   ########.fr       */
+/*   Created: 2022/08/14 23:33:27 by nnuno-ca          #+#    #+#             */
+/*   Updated: 2022/11/04 01:00:48 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "libft.h"
 
-void	args_check(int argc, char **argv)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	if (argc != 3)
-		handle_errors("Invalid number of arguments");
-	if (argv[1][0] < '0' || argv[1][0] > '9')
-		handle_errors("Invalid PID argument");
-}
+	unsigned char	*conv_str;
+	size_t			i;
 
-int main(int argc, char **argv)
-{
-	args_check(argc, argv);
-	signal(SIGINT, handle_sigusr1);
-	
-	
-	return (EXIT_SUCCESS);
+	conv_str = (unsigned char *)str;
+	i = 0;
+	while (n-- > 0)
+	{
+		if (conv_str[i] == (unsigned char)c)
+			return (conv_str + i);
+		i++;
+	}
+	return (NULL);
 }
