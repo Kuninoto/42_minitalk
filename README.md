@@ -9,10 +9,16 @@
 ###  Subject:
 [minitalk en_subject](https://github.com/Kuninoto/42_minitalk/blob/master/extras/en.subject_minitalk.pdf)
 
+#### Makefile Available Targets:  
+`make` or `make all` - Makes _client_ and _server_  
+`make clean` - Deletes all the resulting object files  
+`make fclean` - Deletes the executables and all the resulting object files  
+`make re` - fclean + all  
+
 ### Useful links:  
-- https://harm-smits.github.io/42docs/libs/minilibx/introduction.html  
-- https://itch.io/  
-- https://opengameart.org/  
+- https://www.geeksforgeeks.org/socket-programming-cc/
+- 
+- https://www.youtube.com/watch?v=83M5-NPDeWs
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
