@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 18:55:27 by nnuno-ca         ###   ########.fr       */
+/*   Created: 2022/11/28 18:19:09 by nnuno-ca          #+#    #+#             */
+/*   Updated: 2022/11/28 18:56:48 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "../includes_bonus/minitalk_bonus.h"
 
 void	args_check(int argc, char **argv)
 {
@@ -20,7 +20,7 @@ void	args_check(int argc, char **argv)
 		handle_errors("Invalid PID argument");
 }
 
-void	send_char(pid_t sv_pid, unsigned char c)
+void	send_char(int sv_pid, unsigned char c)
 {
 	int	nbr_bits;
 
@@ -38,7 +38,7 @@ void	send_char(pid_t sv_pid, unsigned char c)
 
 int	main(int argc, char **argv)
 {
-	int		sv_pid;
+	pid_t	sv_pid;
 	char	*msg;
 
 	args_check(argc, argv);
