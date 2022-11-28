@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 18:55:27 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:02:51 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ void	send_char(pid_t sv_pid, unsigned char c)
 
 int	main(int argc, char **argv)
 {
-	int		sv_pid;
-	char	*msg;
+	pid_t		sv_pid;
+	char		*msg;
 
 	args_check(argc, argv);
 	sv_pid = ft_atoi(argv[1]);
-	*msg = argv[2];
+	msg = argv[2];
 	while (*msg)
 	{
 		send_char(sv_pid, *msg);

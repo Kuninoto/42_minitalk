@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:19:24 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 18:58:25 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:01:12 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ void	handle_sigusr(int signum)
 
 int	main(void)
 {
-	pid_t				pid;
+	pid_t	pid;
 
 	pid = getpid();
 	if (!pid)
-    {
+	{
 		ft_putstr_fd("Invalid PID\n", 2);
 		exit(EXIT_FAILURE);
-    }
-
+	}
 	ft_printf("SERVER PID = %d\n", pid);
 	while (1)
 	{		
