@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   prt_str.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 00:20:05 by nnuno-ca         ###   ########.fr       */
+/*   Created: 2022/11/15 01:08:11 by nnuno-ca          #+#    #+#             */
+/*   Updated: 2022/11/17 21:36:07 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "libft.h"
 
-void	args_check(int argc, char **argv)
+int	prt_str(char const *str)
 {
-	if (argc != 3)
-		handle_errors("Invalid number of arguments");
-	if (argv[1][0] < '0' || argv[1][0] > '9')
-		handle_errors("Invalid PID argument");
-}
-
-int main(int argc, char **argv)
-{
-	args_check(argc, argv);
-	signal(SIGINT, handle_sigusr1);
-	
-	
-	return (EXIT_SUCCESS);
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+	else
+		return (write(1, str, ft_strlen(str)));
 }

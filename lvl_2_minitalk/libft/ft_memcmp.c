@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 00:20:05 by nnuno-ca         ###   ########.fr       */
+/*   Created: 2022/08/14 23:55:13 by nnuno-ca          #+#    #+#             */
+/*   Updated: 2022/11/04 01:02:38 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minitalk.h"
+#include "libft.h"
 
-void	args_check(int argc, char **argv)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	if (argc != 3)
-		handle_errors("Invalid number of arguments");
-	if (argv[1][0] < '0' || argv[1][0] > '9')
-		handle_errors("Invalid PID argument");
-}
+	const unsigned char	*conv_str1;
+	const unsigned char	*conv_str2;
+	size_t				i;
 
-int main(int argc, char **argv)
-{
-	args_check(argc, argv);
-	signal(SIGINT, handle_sigusr1);
-	
-	
-	return (EXIT_SUCCESS);
+	conv_str1 = (unsigned char *)str1;
+	conv_str2 = (unsigned char *)str2;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((conv_str1[i] == conv_str2[i]) && i < (n - 1))
+		i++;
+	return (conv_str1[i] - conv_str2[i]);
 }
