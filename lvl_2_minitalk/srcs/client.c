@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/29 00:09:16 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:33:36 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,11 @@ void	send_msg(pid_t sv_pid, char *msg)
 
 void	sig_handler(int signum)
 {
-	if (signum == SIGUSR1)
-		printf("Received SIGUSR1\n");
-	else if (signum == SIGUSR2)
-	{
-		write(1, "Message has been sucessfully receieved!\n", 39);
-		exit(EXIT_SUCCESS);
-	}
+	if (signum == SIGUSR2)
+		write(1, "Character has been sucessfully receieved!\n", 42);
 }
 
-void	create_signal(void)
+void	config_signals(void)
 {
 	struct sigaction	sa_newsig;
 
@@ -77,9 +72,8 @@ int	main(int argc, char **argv)
 
 	args_check(argc, argv);
 	sv_pid = ft_atoi(argv[1]);
-	
 	ft_printf("CLIENT PID = %d\n", getpid());
-	create_signal();
+	config_signals();
 	send_msg(sv_pid, argv[2]);
 	while (1)
 		pause();
