@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:39 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/29 19:13:20 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:40:21 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	config_signals(void)
 	if (sigaction(SIGUSR2, &sa_newsig, NULL) == -1)
 		handle_errors("Failed to change SIGUSR2's behavior");
 }
- 
+
 int	main(void)
 {
 	pid_t	pid;

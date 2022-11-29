@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:19:09 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/28 18:56:48 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:42:13 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,69 @@
 
 void	args_check(int argc, char **argv)
 {
+	int	i;
+
+	i = 0;
 	if (argc != 3)
 		handle_errors("Invalid number of arguments");
-	if (argv[1][0] < '0' || argv[1][0] > '9')
-		handle_errors("Invalid PID argument");
+	while (argv[1][i])
+		if (!ft_isdigit(argv[1][i++]))
+			handle_errors("Invalid PID");
+	if (*argv[2] == 0)
+		handle_errors("Invalid message (empty)");
 }
 
-void	send_char(int sv_pid, unsigned char c)
+void	send_msg(pid_t sv_pid, char *msg)
 {
-	int	nbr_bits;
+	unsigned char	c;
+	int				nbr_bits;
 
-	nbr_bits = 8;
-	while (nbr_bits--)
+	while (*msg)
 	{
-		if (c & 0b10000000)
-			kill(sv_pid, SIGUSR1);
-		else
-			kill(sv_pid, SIGUSR2);
-		usleep(1);
-		c <<= 1;
+		c = *msg;
+		nbr_bits = 8;
+		while (nbr_bits--)
+		{
+			if (c & 0b10000000)
+				kill(sv_pid, SIGUSR1);
+			else
+				kill(sv_pid, SIGUSR2);
+			usleep(10);
+			c <<= 1;
+		}
+		msg++;
 	}
+}
+
+void	sig_handler(int signum)
+{
+	if (signum == SIGUSR2)
+		write(1, "Character has been sucessfully receieved!\n", 42);
+}
+
+void	config_signals(void)
+{
+	struct sigaction	sa_newsig;
+
+	sa_newsig.sa_handler = &sig_handler;
+	sa_newsig.sa_flags = SA_SIGINFO;
+	if (sigaction(SIGUSR1, &sa_newsig, NULL) == -1)
+		handle_errors("Failed to change SIGUSR1's behavior");
+	if (sigaction(SIGUSR2, &sa_newsig, NULL) == -1)
+		handle_errors("Failed to change SIGUSR2's behavior");
 }
 
 int	main(int argc, char **argv)
 {
-	pid_t	sv_pid;
-	char	*msg;
+	pid_t		sv_pid;
 
 	args_check(argc, argv);
 	sv_pid = ft_atoi(argv[1]);
-	*msg = argv[2];
-	while (*msg)
-	{
-		send_char(sv_pid, *msg);
-		msg++;
-	}
+	ft_printf("CLIENT PID = %d\n", getpid());
+	config_signals();
+	send_msg(sv_pid, argv[2]);
+	while (1)
+		pause();
 	return (EXIT_SUCCESS);
 }
 
