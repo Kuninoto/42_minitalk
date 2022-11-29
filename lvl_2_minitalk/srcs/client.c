@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/29 19:33:36 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:40:40 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	args_check(int argc, char **argv)
 {
 	int	i;
-	
+
 	i = 0;
 	if (argc != 3)
 		handle_errors("Invalid number of arguments");
