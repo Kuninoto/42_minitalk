@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nnuno-ca <nnuno-ca@student.42.fr>          +#+  +:+       +#+         #
+#    By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/27 20:38:49 by nnuno-ca          #+#    #+#              #
-#    Updated: 2022/11/28 19:12:53 by nnuno-ca         ###   ########.fr        #
+#    Updated: 2022/11/30 13:04:14 by nnuno-ca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,6 @@ SV_OBJS = $(SV_SRCS:.c=.o)
 
 CLIENT_SRCS = srcs/client.c
 CLIENT_OBJS = $(CLIENT_SRCS:.c=.o)
-
-#BONUS_SRCS = 
-#BONUS_OBJS = $(BONUS_SRCS:c=.o)
 
 all: $(SERVER) $(CLIENT)
 
@@ -43,4 +40,4 @@ fclean: clean
 	$(RM) $(SERVER) $(CLIENT)
 re: fclean all
 
-bonus: 
+bonus: all

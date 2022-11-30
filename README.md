@@ -13,14 +13,15 @@
 `make` or `make all` - Makes _client_ and _server_  
 `make clean` - Deletes all the resulting object files  
 `make fclean` - Deletes the executables and all the resulting object files  
-`make re` - fclean + all  
+`make re` - fclean + all
+`make bonus` - same as `all`, added for subject purposes  
 
 ### Useful links:  
 - https://www.youtube.com/watch?v=83M5-NPDeWs
 - https://emojidb.org/terminal-emojis
 
 ## Disclaimer
-> At [42School](https://en.wikipedia.org/wiki/42_(school)), almost every project must be written in accordance to the [Norm](./extras/en_norme.pdf), the schools' coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
+> At [42School](https://en.wikipedia.org/wiki/42_(school)), almost every project must be written in accordance to the [Norm](./extras/en_norm.pdf), the schools' coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
