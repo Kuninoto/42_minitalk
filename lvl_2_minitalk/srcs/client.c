@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 23:15:14 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/29 19:40:40 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:09:20 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	send_msg(pid_t sv_pid, char *msg)
 				kill(sv_pid, SIGUSR1);
 			else
 				kill(sv_pid, SIGUSR2);
-			usleep(10);
+			usleep(50);
 			c <<= 1;
 		}
 		msg++;

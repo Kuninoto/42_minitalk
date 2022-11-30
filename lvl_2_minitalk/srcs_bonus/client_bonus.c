@@ -6,7 +6,7 @@
 /*   By: nnuno-ca <nnuno-ca@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:19:09 by nnuno-ca          #+#    #+#             */
-/*   Updated: 2022/11/29 19:42:13 by nnuno-ca         ###   ########.fr       */
+/*   Updated: 2022/11/30 13:09:23 by nnuno-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	send_msg(pid_t sv_pid, char *msg)
 				kill(sv_pid, SIGUSR1);
 			else
 				kill(sv_pid, SIGUSR2);
-			usleep(10);
+			usleep(50);
 			c <<= 1;
 		}
 		msg++;
@@ -72,7 +72,6 @@ int	main(int argc, char **argv)
 
 	args_check(argc, argv);
 	sv_pid = ft_atoi(argv[1]);
-	ft_printf("CLIENT PID = %d\n", getpid());
 	config_signals();
 	send_msg(sv_pid, argv[2]);
 	while (1)
