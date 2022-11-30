@@ -7,7 +7,7 @@
 
 
 ###  Subject:
-[minitalk en_subject](https://github.com/Kuninoto/42_minitalk/blob/master/extras/en.subject_minitalk.pdf)
+[minitalk en_subject](./extras/en.subject_minitalk.pdf)
 
 #### Makefile Available Targets:  
 `make` or `make all` - Makes _client_ and _server_  
@@ -16,9 +16,11 @@
 `make re` - fclean + all  
 
 ### Useful links:  
-- https://www.geeksforgeeks.org/socket-programming-cc/
-- 
 - https://www.youtube.com/watch?v=83M5-NPDeWs
+- https://emojidb.org/terminal-emojis
+
+## Disclaimer
+> At [42School](https://en.wikipedia.org/wiki/42_(school)), almost every project must be written in accordance to the [Norm](.extras/en_norme.pdf), the schools' coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
