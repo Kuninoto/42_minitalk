@@ -18,6 +18,7 @@
 
 ### Useful links:  
 - https://www.youtube.com/watch?v=83M5-NPDeWs
+- https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/
 - https://emojidb.org/terminal-emojis
 
 ## Disclaimer
