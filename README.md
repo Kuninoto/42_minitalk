@@ -2,7 +2,7 @@
 
 ## Grade: 125/100
 
-<img src="https://github.com/Kuninoto/42_minitalk/tree/master/extras/showcase.gif" alt="Minitalk Showcase"  width="500" />
+![](./extras/showcase.gif)
 
 ### Installing and running the project:
 
