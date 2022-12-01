@@ -2,10 +2,7 @@
 
 ## Grade: 125/100
 
-### Showcase:
-
-![](/extras/showcase.mp4)
-
+![](/extras/showcase.gif)
 
 ### Installing and running the project:
 
