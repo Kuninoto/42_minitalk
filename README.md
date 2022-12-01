@@ -2,9 +2,27 @@
 
 ## Grade: 125/100
 
+### Showcase:
+
+![](/extras/showcase.mp4)
+
 
 ### Installing and running the project:
 
+1- Clone this repository
+	
+	git clone https://github.com/Kuninoto/42_minitalk
+2- Navigate to _lvl_2_minitalk_ and run `make`
+	
+	cd 42_minitalk/lvl_2_minitalk
+   	make
+3- `make clean` so that you don't keep those object files that you won't need anymore
+
+	make clean
+4- Run server and copy its PID to the client alongside the message you want to send.
+
+	./server
+	./client <server_PID> <message>
 
 ###  Subject:
 [minitalk en_subject](./extras/en.subject_minitalk.pdf)
