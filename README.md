@@ -28,7 +28,7 @@
 `make` or `make all` - Makes _client_ and _server_  
 `make clean` - Deletes all the resulting object files  
 `make fclean` - Deletes the executables and all the resulting object files  
-`make re` - fclean + all
+`make re` - fclean + all  
 `make bonus` - same as `all`, added for subject purposes  
 
 ### Useful links:  
