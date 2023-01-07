@@ -1,4 +1,4 @@
-# minitalk (42Porto - 42Cursus) <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="Linux Logo" width="50" height="60" align="right" />&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" title="C" alt="C Logo" width="55" height="55" align="right" />&nbsp; 
+# minitalk (42Porto - 42Cursus) <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="Linux Logo" width="50" height="60" align="right" /> <img src="https://github.com/devicons/devicon/blob/master/icons/c/c-original.svg" title="C" alt="C Logo" width="55" height="55" align="right" />&nbsp; 
 
 ## Grade: 125/100
 
@@ -21,8 +21,7 @@
 	./server
 	./client <server_PID> <message>
 
-###  Subject:
-[minitalk en_subject](./extras/en.subject_minitalk.pdf)
+###  Subject: [minitalk en_subject](./extras/en.subject_minitalk.pdf)
 
 #### Makefile Available Targets:  
 `make` or `make all` - Makes _client_ and _server_  
