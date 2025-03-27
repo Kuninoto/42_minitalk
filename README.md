@@ -5,6 +5,9 @@
 ### Showcase
 ![](./extras/showcase.gif)
 
+### Description
+2 programs, `server` and `client` that use the UNIX signals SIGUSR1 and SIGUSR2 to exchange binary-encoded messsages - Introduction to Inter Process Communication (IPC).  
+
 ### Installing and running the project
 
 1- Clone this repository
